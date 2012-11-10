@@ -1,4 +1,3 @@
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
@@ -115,7 +114,92 @@ jazik1.setBounds(75,355,150,20);
 panel.add(jazik1);
 
 
+final JLabel zelba=new JLabel("Vo koja programa bi sakale da rabotite?");
+zelba.setBounds(10,380,1000,50);
+panel.add(zelba);
 
+String [] titleList1={"Maya","Eclipse","MySQL"};
+final JComboBox combo1=new JComboBox(titleList1);
+combo1.setSelectedIndex(2);
+combo1.setBounds(10, 440, 150, 20);
+panel.add(combo1);
+
+final JLabel zelba1=new JLabel("Jazici");
+zelba1.setBounds(10,470,1000,50);
+panel.add(zelba1);
+
+JCheckBox chinButton = new JCheckBox();
+chinButton.setBounds(10, 540, 20, 20);
+panel.add(chinButton);
+JCheckBox chinButton1 = new JCheckBox();
+chinButton1.setBounds(10, 510, 20, 20);
+panel.add(chinButton1);
+
+JCheckBox chinButton2 = new JCheckBox();
+chinButton2.setBounds(10, 570, 20, 20);
+panel.add(chinButton2);
+
+final JLabel zelba2=new JLabel("Angliski");
+zelba2.setBounds(35,495,1000,50);
+panel.add(zelba2);
+
+final JLabel zelba3=new JLabel("Germanski");
+zelba3.setBounds(35,525,1000,50);
+panel.add(zelba3);
+
+final JLabel zelba4=new JLabel("Francuski");
+zelba4.setBounds(35,555,1000,50);
+panel.add(zelba4);
+
+
+
+
+JButton kopce=new JButton("Prijavi se");
+kopce.setBounds(80, 630, 150, 20);
+panel.add(kopce);
+kopce.setToolTipText("Generates file");
+
+kopce.addActionListener(new ActionListener(){
+
+@Override
+public void actionPerformed(ActionEvent event) {
+// TODO Auto-generated method stub
+if(ime1.getText().equals("")||prezime1.getText().equals("")){
+	 JOptionPane.showMessageDialog(panel,"Polinjata so '*' treba da se popolneti","Izvestuvanje", JOptionPane.WARNING_MESSAGE);
+
+}
+else{
+try{
+FileWriter record=new FileWriter("D:/prijava.txt");
+BufferedWriter out=new BufferedWriter(record);
+out.write("--------------Prijava--------------"+"\r\n");
+out.write("Ime: "+ime1.getText()+"\r\n");
+out.write("Prezime: "+prezime1.getText()+"\r\n");
+out.write("Adresa: "+adresa1.getText()+"\r\n");
+out.write("Iskustvo: "+iskustvo1.getText()+"\r\n");
+out.write("Jazici: "+jazik1.getText()+"\r\n");
+
+out.write("Opshtina: "+combo.getSelectedItem()+"\r\n");
+out.write("Programa: "+combo1.getSelectedItem()+"\r\n");
+if(buton.isSelected()){
+out.write("Knowlage: "+knowlageList[0]+"\r\n");
+}
+if(buton1.isSelected()){
+out.write("Knowlage: "+knowlageList[1]+"\r\n");
+}
+if(buton2.isSelected()){
+out.write("Knowlage: "+knowlageList[2]+"\r\n");
+}
+out.write("----------------------------------");
+out.close();
+JOptionPane.showMessageDialog(panel, "Prijavuvaneto e uspeshno");
+}
+catch(Exception e){
+
+}}
+}
+
+});
 
 
 
