@@ -22,10 +22,49 @@ setTitle("Prijava za rabota");
 setSize(350,700);
 setLocationRelativeTo(null);
 
-final JPanel imepanel=new JPanel();
-getContentPane().add(imepanel);
-imepanel.setLayout(null);
+final JPanel panel=new JPanel();
+getContentPane().add(panel);
+panel.setLayout(null);
 
+final JLabel ime=new JLabel("Ime*");
+ime.setBounds(10,15,100,50);
+panel.add(ime);
+
+final JTextField ime1=new JTextField();
+ime1.setBounds(75,30,150,20);
+panel.add(ime1);
+
+
+
+
+final JLabel prezime=new JLabel("Prezime*");
+prezime.setBounds(10,50,100,50);
+panel.add(prezime);
+
+final JTextField prezime1=new JTextField();
+prezime1.setBounds(75,65,150,20);
+panel.add(prezime1);
+
+final JLabel adresa=new JLabel("Adresa");
+adresa.setBounds(10,85,100,50);
+panel.add(adresa);
+
+final JTextField adresa1=new JTextField();
+adresa1.setBounds(75,100,150,20);
+panel.add(adresa1);
+
+
+
+
+final JLabel title=new JLabel("Opshtina");
+title.setBounds(10,120,100,50);
+panel.add(title);
+
+String [] titleList={"Bitola","Resen","Novaci"};
+final JComboBox combo=new JComboBox(titleList);
+combo.setSelectedIndex(2);
+combo.setBounds(75, 135, 150, 20);
+panel.add(combo);
 
 
 
